@@ -10,6 +10,19 @@ func main() {
 
 }
 
+// CheckForFactor Divison reword
+func CheckForFactor(base int, factor int) bool {
+	return base%factor == 0
+}
+
+func CheckForFactorTwo(base int, factor int) bool {
+	var result bool = false
+	if base%factor == 0 {
+		result = true
+	}
+	return result
+}
+
 // AbbrevName a Two Word Name
 func AbbrevName(name string) string {
 	var s []string
