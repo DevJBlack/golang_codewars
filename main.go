@@ -10,6 +10,54 @@ func main() {
 
 }
 
+// Past takes in hours minutes and seconds and we need to convert it into milliseconds
+func Past(h, m, s int) int {
+	var sum int
+	if h >= 1 && m >= 1 && s >= 1 {
+		h = (h * 60 * 60 * 1000)
+		m = (m * 60 * 1000)
+		s = s * 1000
+		sum += h + m + s
+	} else if h <= 0 && m >= 1 && s >= 1 {
+		m = (m * 60 * 1000)
+		s = s * 1000
+		sum += h + m + s
+	} else if h >= 1 && m == 0 && s == 0 {
+		h = (h * 60 * 60 * 1000)
+		m = (m * 0)
+		s = (s * 0)
+		sum += h + m + s
+	} else if m <= 0 && h >= 1 && s >= 1 {
+		h = (h * 60 * 60 * 1000)
+		s = s * 1000
+		sum += h + m + s
+	} else if s <= 0 && m >= 1 && h >= 1 {
+		h = (h * 60 * 60 * 1000)
+		m = (m * 60 * 1000)
+		sum += h + m + s
+	} else if h == 0 && m == 0 && s == 0 {
+		h = (h * 0)
+		m = (m * 0)
+		s = (s * 0)
+		sum += h + m + s
+	}
+
+	return sum
+}
+
+// Past2 the most effiecent way to do it
+func Past2(h, m, s int) int {
+	return (h*3600000 + m*60000 + s*1000)
+}
+
+func Past3(h, m, s int) int {
+	hour := h * 60 * 60 * 1000
+	minute := m * 60 * 1000
+	second := s * 1000
+
+	return hour + minute + second
+}
+
 // CheckForFactor Divison reword
 func CheckForFactor(base int, factor int) bool {
 	return base%factor == 0
