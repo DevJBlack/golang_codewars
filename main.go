@@ -10,6 +10,11 @@ func main() {
 
 }
 
+// MakeUpperCase, is a function that when passed a string will convert it to upper case
+func MakeUpperCase(str string) string {
+	return (strings.ToUpper(str))
+}
+
 // Past takes in hours minutes and seconds and we need to convert it into milliseconds
 func Past(h, m, s int) int {
 	var sum int
